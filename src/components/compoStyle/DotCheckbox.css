@@ -1,0 +1,49 @@
+.dot-checkbox {
+    display: inline-block;
+    position: relative;
+    padding-left: 24px;
+    cursor: pointer;
+    user-select: none;
+    overflow: hidden;
+  }
+  
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 18px;
+    width: 18px;
+    background-color: #ccc;
+    border-radius: 50%;
+  } 
+  
+  input[type="checkbox"] {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+  
+  input[type="checkbox"]:checked ~ .checkmark {
+    background-color: #2196F3;
+  }
+  
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  input[type="checkbox"]:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  .checkmark:after {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+  }
+  

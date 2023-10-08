@@ -1,0 +1,214 @@
+/* .product-slider {
+    width: 200px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+}*/
+
+ .product {
+    width: 88%;
+    height: 100%;
+    z-index: 1;
+    cursor: pointer;
+    background: rgb(85, 79, 79);
+} 
+
+.Rating-btn {
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding: 0.37rem;
+    background: #d4d5d9a1;
+    border-radius: 2px;
+    border: none;
+    position: absolute;
+    bottom: 6.7rem;
+    left: 0rem;
+    backdrop-filter: blur(9px);
+}
+
+.rate {
+    margin-right: 4px;
+}
+
+.star {
+    margin-right: 3px;
+}
+
+.k-numb {
+    margin-left: 4px;
+}
+
+/* .product-info {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+} */
+
+.title {
+    margin-top: 6px;
+    margin-left: 8px;
+    font-size: 17px;
+    margin-bottom: 4px;
+    font-weight: 700;
+    overflow: hidden;
+}
+
+.para {
+    font-size: 14.7px;
+    color: #665f57;
+    margin-bottom: 8px;
+    font-weight: 700;
+    overflow: hidden;
+}
+.p-price{
+    overflow: hidden;
+}
+.p-price {
+    font-size: 12px;
+    margin-top: 8px;
+}
+
+.p-price .real-p {
+    color: #665f57;
+    font-weight: 700;
+    margin-left: 14px;
+    margin-right: 14px;
+    text-decoration: line-through;
+}
+
+.disc-p {
+    font-weight: 900;
+}
+
+.discount-percentage {
+    color: #c84673;
+    font-weight: 600;
+}
+.wishlist-parent{
+    display: flex;
+    justify-content: center;
+    background: #efe1e1;
+    width: 100%;
+    height: 0.6rem;
+}
+.wishlist-btn {
+    width: 95%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    padding: 0.37rem;
+    color: rgb(20, 19, 19);
+    background: #ffffff;
+    border-radius: 2px;
+    border: 2px solid grey;
+    overflow: hidden;
+
+    position: absolute;
+    bottom: 4.18rem;
+}
+
+/* .card{
+    width: 200px;
+    height: 400px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    background: rgb(223, 57, 57);
+}
+.card .hover-img{
+    width: 200px;
+    height: 300px;
+    border: 2px solid red;
+}
+.product-below-part{
+    margin-top: -2rem;
+    width: 200px;
+    height: 100px;
+    
+    display: flex;
+    justify-content: start;
+    align-items: center;
+} */
+
+.card {
+    background: rgb(233 216 216);
+    width: 217px;
+    height: 400px;
+    /* box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); */
+    display: flex;
+    justify-content: unset;
+    align-items: center;
+    flex-direction: column;
+    position: relative;
+}
+
+.card img {
+    width: 100%;
+    height: 300px;
+    /* height: auto; */
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    object-fit: cover;
+}
+
+/*  */
+
+
+.card-hover {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+.carousel-container{
+    overflow: hidden;
+}
+
+/* .card-hover img {
+    width: 100%;
+    height: 230px;
+} */
+
+.card-bottom {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    width: 100%;
+}
+.card-bottom1{
+    margin-top: 2rem;
+}
+
+.card p {
+    margin: 2px 5px 12px 8px;
+}
+
+.card .view-icon {
+    color: rgb(172, 45, 68);
+    position: absolute;
+    bottom: 8rem;
+    right: 1rem;
+    background: rgb(223, 214, 214);
+    border-radius: 50%;
+    border: none;
+    padding: 5px;
+}
+
+
+
+.card .size1 {
+    color: rgb(22, 2, 2);
+    font-weight: 900;
+    overflow: hidden;
+    margin-top: 1rem;
+    margin-bottom: 15px;
+}
+
+.card .size {
+    color: rgb(22, 2, 2);
+    font-weight: 900;
+    overflow: hidden;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}

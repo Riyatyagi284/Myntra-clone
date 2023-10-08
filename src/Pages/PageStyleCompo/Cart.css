@@ -1,0 +1,128 @@
+.cart-ist-parent {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background: #fff;
+    gap: 16px;
+    margin: 0 8px;
+    margin-bottom: 4rem;
+}
+
+.cart-left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4px;
+}
+
+.cart-right-side {
+    display: flex;
+    flex-direction: column;
+    margin-left: 9px;
+    margin-top: 9px;
+    /* justify-content: flex-start;
+    align-items: flex-start; */
+    justify-content: start;
+    align-items: start;
+}
+
+.cart-right-ist {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+}
+
+.right-ist-para1 {
+    color: rgb(15, 214, 98);
+    font-weight: 500;
+    font-size: 1.4rem;
+    text-align: start;
+}
+
+.right-ist-para2 {
+    color: rgb(5, 116, 82);
+    font-weight: 900;
+    font-size: 4.2rem;
+    margin-bottom: 3px;
+}
+
+.right-ist-para3 {
+    color: grey;
+    font-weight: 400;
+    font-size: 1.4rem;
+    text-align: start;
+}
+
+.right-ist-para3 span {
+    font-size: 1.4rem;
+    margin-top: 3px;
+}
+
+.cart-right-second {
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    margin-top: 1rem;
+}
+
+.sec-right-para {
+    color: grey;
+    font-weight: 400;
+    text-align: left;
+    font-size: 1.7rem;
+}
+
+.sec-right-para span {
+    color: black;
+    font-size: 1.4rem;
+    font-weight: 900;
+    text-align: left;
+}
+
+.cart-right-second button {
+    background: rgb(9, 80, 9);
+    font-weight: 900;
+    color: #fff;
+    text-align: center;
+    padding: 1.2rem;
+    margin-top: 4px;
+    width: 10rem;
+}
+
+.second-parent-div {
+    width: 1200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 2rem auto;
+}
+
+.second-parent-div h1 {
+    font-weight: 600;
+    font-size: 1.4rem;
+    color: grey;
+    margin: 0 2px;
+}
+
+.second-parent-div button {
+    padding: 0.5rem;
+    width: 7rem;
+    height: 3rem;
+    border-radius: 2rem;
+    background: rgb(3, 63, 3);
+    color: #fff;
+    font-weight: 700;
+    text-align: center;
+}
+.second-parent-div button:hover{
+    background: rgb(14, 212, 14);
+    border: 2px solid rgb(14, 212, 14) ;
+}
+.cart-img{
+    width: 7rem;
+    height: 7rem;
+}
