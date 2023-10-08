@@ -15,7 +15,7 @@ const Brand = ({ handleChange }) => {
         setBrandInputValue(e.target.value)
     }
   
-    const BrandFilterValue = brandFilter()
+    // const BrandFilterValue = brandFilter()
 
     return (
         <>

@@ -1,7 +1,9 @@
+/* Add Roboto font links -> font-family:{Roboto, Roboto Medium and Assistant, Assistant Bold}  */
+
 *{
     margin: 0;
     padding: 0;
-    overflow-x: hidden;
+    box-sizing: border-box;
 }
 .nav-link{
     text-decoration: none;

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import OwlCarousel from 'react-owl-carousel';
 import 'owl.carousel/dist/assets/owl.carousel.css';
 import 'owl.carousel/dist/assets/owl.theme.default.css';
@@ -30,16 +30,16 @@ const ProductSlider = ({ mainImage, otherImages, rating, knumbering, title, para
             {
                 hovering ? (<div className="card card-hover">
                     <div className='carousel-container'>
-                        <OwlCarousel margin={0} loop={true} items={1} autoplay={true} autoplayTimeout={2000} nav={false} autoplayHoverPause={false} autoPlay={true} dots={true}>
+                        <OwlCarousel className='owl-theme' margin={0} loop={true} items={1} autoplay={true} autoplayTimeout={2000} nav={false} autoplayHoverPause={false} autoPlay={true} dots={true}>
                             {otherImages.map((image, index) => (
-                                <div className="item">
-                                    <img key={index} src={image} alt={`Product ${index + 1}`} />
+                                <div className="item" key={index}>
+                                    <img src={image} alt={`Product ${index + 1}`} />
                                 </div>
                             ))}
 
                         </OwlCarousel>
                     </div>
-                    <MdOutlineViewCarousel fontSize={18} className="view-icon" />
+                    <MdOutlineViewCarousel fontSize={18} className="view-icon" onClick={handleChange} selectedCategory={selectedCategory}  />
                     {/* onClick={handleChange} selectedCategory={selectedCategory}  */}
                     {/* this is for view icon */}
                     <div className='wishlist-parent'>

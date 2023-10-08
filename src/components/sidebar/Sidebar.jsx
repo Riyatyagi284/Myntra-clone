@@ -1,4 +1,3 @@
-import React from 'react'
 import Gender from './sidebarCompoJsxFiles/Gender'
 import Brand from './sidebarCompoJsxFiles/Brand'
 import Price from './sidebarCompoJsxFiles/Price'

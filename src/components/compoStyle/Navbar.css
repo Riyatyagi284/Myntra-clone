@@ -1,8 +1,8 @@
 .Navbar {
     display: flex;
     height: 80px;
-    width: 100vw;
-    overflow-y: hidden;
+    width: 100%;
+    /* font-family: "Assistant Bold"; */
 }
 
 
