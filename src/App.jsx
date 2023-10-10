@@ -8,7 +8,6 @@ import MainComponent from './MainComponent';
 const AuthStateChange = () => {
   const user = useSelector(selectUser);
   const dispatch = useDispatch();
-  console.log("user", user)
   useEffect(() => {
     onAuthStateChanged(auth, (userAuth) => {
       if (userAuth) {
@@ -24,18 +23,20 @@ const AuthStateChange = () => {
         dispatch(logout());
       }
     });
-    console.log("page loaded");
   }, []);
 
   return (
     <>
-      {
+      {/* {
         !user ? (
           <Login />
         ) : (
           <MainComponent />
         )
-      }
+      } */}
+
+      <MainComponent />
+      
     </>
   )
 }

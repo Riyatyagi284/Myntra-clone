@@ -1,12 +1,20 @@
 import React, { useState, useEffect } from 'react'
-import { NavLink } from 'react-router-dom';
-import { useSelector , useDispatch } from 'react-redux';
+import { NavLink, useNavigate } from 'react-router-dom';
+import { useSelector, useDispatch } from 'react-redux';
 import CartItem from "../components/CartItem"
 import { remove } from "../redux/Slices/CartSlice"
-import {toast} from "react-hot-toast"
+import { toast } from "react-hot-toast"
 import './PageStyleCompo/Cart.css'
+import EmptyBag from "../Images/myntra-empty-bag.png"
+import { selectUser } from '../redux/Slices/AuthSlice';
+import CartToWishlist from './CartToWishlist';
+import Wishlist from './Wishlist';
 
 const Cart = () => {
+    const user = useSelector(selectUser);
+
+    const navigate = useNavigate()
+
     const { cart } = useSelector((state) => state);
     const dispatch = useDispatch();
     const [totalAmount, setTotalAmount] = useState(0);
@@ -15,19 +23,29 @@ const Cart = () => {
     const saveCartToLocalStorage = (cartData) => {
         localStorage.setItem('cart', JSON.stringify(cartData));
     };
- //function to retrieve cart data from localStorage
+    //function to retrieve cart data from localStorage
     const getCartFromLocalStorage = () => {
-    const storedCartData = localStorage.getItem('cart');
-    console.log(storedCartData);
-    if (!storedCartData) {
-        return []
-    }else{
-        console.log("else condition run right here")
-        return JSON.parse (storedCartData);
-    }
+        const storedCartData = localStorage.getItem('cart');
+        console.log(storedCartData);
+        if (!storedCartData) {
+            return []
+        } else {
+            console.log("else condition run right here")
+            return JSON.parse(storedCartData);
+        }
     };
 
     const [cartItem, setCartItem] = useState(getCartFromLocalStorage())
+
+    const handleCartToWishlist = () => {
+        console.log("clicked")
+      
+        if (!user) {
+          navigate("/cart/cart-to-wishlist");
+        } else {
+          navigate("/wishlist");
+        }
+      };
 
     useEffect(() => {
         setTotalAmount(cart.reduce((acc, curr) => acc + curr.price, 0));
@@ -38,19 +56,19 @@ const Cart = () => {
     useEffect(() => {
         const storedCartData = getCartFromLocalStorage();
         setCartItem(storedCartData)
-    },[])
+    }, [])
 
 
     return (
-        <div style={{ background: "#d7d7d72b" }}>
+        <div>
             {cart &&
                 cart.length > 0 ? (
-                <div className='cart-ist-parent'>
+                <div className='cart-ist-parent' style={{ background: "#d7d7d72b" }}>
                     <div className="cart-left-side">
                         {
                             cart.map((item, index) => (
                                 <div key={item.id}>
-                                    <CartItem  item={item} itemIndex={index} saveCartToLocalStorage={saveCartToLocalStorage} />
+                                    <CartItem item={item} itemIndex={index} saveCartToLocalStorage={saveCartToLocalStorage} />
                                 </div>
                             ))
                         }
@@ -73,12 +91,25 @@ const Cart = () => {
                 </div>
             ) : (
                 <div className="second-parent-div">
-                    <h1>Cart Empty</h1>
-                    <NavLink to="/">
-                        <button>
-                            Shop Now
-                        </button>
-                    </NavLink>
+                    <img src={EmptyBag} alt="Empty-Bag" />
+                    <div className='second-parent-div-content'>
+                        <h2>Hey, it feels so light!</h2>
+                        <p>There is nothing in your bag. Let's add some items.</p>
+                        <div className="button-wrapper">
+                            <NavLink to="/">
+                                <button>
+                                    Shop Now
+                                </button>
+                            </NavLink>
+
+                            {/* <NavLink to="/cart-to-wishlist"> */}
+                            <button onClick={handleCartToWishlist}>
+                                ADD ITEMS FROM WISHLIST
+                            </button>
+                            {/* </NavLink> */}
+
+                        </div>
+                    </div>
                 </div>
             )
             }

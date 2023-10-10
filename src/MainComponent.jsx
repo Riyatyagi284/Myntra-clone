@@ -8,6 +8,8 @@ import Footer from './components/Footer'
 import Wishlist from "./Pages/Wishlist"
 import Cart from "./Pages/Cart"
 import { Route, Routes } from "react-router-dom"
+import CartToWishlist from './Pages/CartToWishlist'
+import Login from './Pages/Login'
 
 function MainComponent() {
   const [searchQuery, setSearchQuery] = useState("")
@@ -24,11 +26,13 @@ function MainComponent() {
       <Routes>
         <Route exact="/" index element={<Home handleSearchInputChange={handleSearchInputChange} searchQuery={searchQuery}/>} />
         <Route path="/wishlist" element={<Wishlist />} />
+        <Route path="/cart/cart-to-wishlist" element={<CartToWishlist />} />
         <Route path="/cart" element={<Cart />} />
+        <Route path="/login" element={<Login />} />
         <Route path="/product-detail-page" element={<ProductDetailPage />} />
         <Route path="/product-detail-page/:id" element={<ProductDetailPage />} />
       </Routes>
-      <Footer />
+      {/* <Footer /> */}
 
 
     </>

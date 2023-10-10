@@ -21,7 +21,6 @@ function Navbar({ handleSearchInputChange, searchQuery }) {
   }
 
   const user = useSelector(selectUser);
-  console.log("user", user)
   const dispatch = useDispatch();
 
   const logoutFromApp = () => {

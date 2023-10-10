@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import { auth, createUserWithEmailAndPassword, updateProfile, signInWithEmailAndPassword, } from '../Firebase';
 import { login } from "../redux/Slices/AuthSlice"
 import "./PageStyleCompo/Login.css"
+import MyntraLoginImage from "../Images/Myntra-Login-Image.avif"
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -57,42 +58,51 @@ const Login = () => {
         })
             .catch((error) => {
                 console.log('Error registering user:', error);
-                alert('Error registering user. Please try again.',error);
+                alert('Error registering user. Please try again.', error);
             })
 
-        
+
     };
 
     return (
-        <div className="login">
-            <form >
-                <input value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    placeholder="Full Name"
-                    type="text" />
+        <div className="myntra-auth-page">
+            <div className="myntra-auth-page-content">
+                <img src={MyntraLoginImage} alt="myntra-auth-pic" />
+                <div className="login-data-container">
+                    <div className="login">
+                        <h2>Login <span>or</span> Signup</h2>
+                        <form >
+                            <input value={name}
+                                onChange={(e) => setName(e.target.value)}
+                                placeholder="Full Name"
+                                type="text" />
 
-                <input value={profilePic}
-                    onChange={(e) => setProfilePic(e.target.value)}
-                    placeholder="Profile Picture URL"
-                    type="text" />
+                            <input value={profilePic}
+                                onChange={(e) => setProfilePic(e.target.value)}
+                                placeholder="Profile Picture URL"
+                                type="text" />
 
-                <input value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    placeholder="Email"
-                    type="email" />
+                            <input value={email}
+                                onChange={(e) => setEmail(e.target.value)}
+                                placeholder="Email"
+                                type="email" />
 
-                <input value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    placeholder="Password"
-                    type="password" />
+                            <input value={password}
+                                onChange={(e) => setPassword(e.target.value)}
+                                placeholder="Password"
+                                type="password" />
 
-                <button type="submit" onClick={loginToApp}>Sign In</button>
-            </form>
 
-            <p>
-                Not a member?{''}
-                <span className='login__register' onClick={register}>Register Now</span>
-            </p>
+                            <button type="submit" onClick={loginToApp}>Sign In</button>
+                        </form>
+
+                        <p>
+                            Not a member?{''}
+                            <span className='login__register' onClick={register}>Register Now</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
         </div>
     )
 }

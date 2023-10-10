@@ -92,37 +92,59 @@
 }
 
 .second-parent-div {
-    width: 1200px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     gap: 1rem;
-    margin: 2rem auto;
+    margin-top: 5rem;
 }
 
-.second-parent-div h1 {
-    font-weight: 600;
-    font-size: 1.4rem;
-    color: grey;
-    margin: 0 2px;
+.second-parent-div>img {
+    background: none;
+    height: 165px;
+    width: 146px;
+}
+
+.second-parent-div-content {
+    width: 100%;
+    height: 100%;
+}
+
+.second-parent-div-content>h2 {
+    text-align: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #424553;
+}
+
+.second-parent-div-content>p {
+    text-align: center;
+    font-size: 14px;
+    color: #7e818c;
+    margin-bottom: 5px;
+}
+
+.second-parent-div-content>.button-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 .second-parent-div button {
-    padding: 0.5rem;
-    width: 7rem;
-    height: 3rem;
-    border-radius: 2rem;
-    background: rgb(3, 63, 3);
-    color: #fff;
+    background: #fff;
+    color: #ff3f6c;
+    padding: 0.7rem;
     font-weight: 700;
-    text-align: center;
+    cursor: pointer;
+    border: 1px solid #ff3f6c;
+    display: inline-block;
 }
-.second-parent-div button:hover{
-    background: rgb(14, 212, 14);
-    border: 2px solid rgb(14, 212, 14) ;
-}
-.cart-img{
+
+.cart-img {
     width: 7rem;
     height: 7rem;
 }

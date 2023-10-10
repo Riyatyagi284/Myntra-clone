@@ -14,4 +14,3 @@ export const store = configureStore({
     },
 });
 
-console.log("auth STATE",store.getState().auth)

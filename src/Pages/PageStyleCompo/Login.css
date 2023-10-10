@@ -1,43 +1,91 @@
+.myntra-auth-page {
+  height: 87vh;
+  width: 100%;
+  background: linear-gradient(to bottom right, #feedf6, #fcf0e2);
+}
+
+.myntra-auth-page-content {
+  min-height: calc(100vh - 136px);
+  background: #ffff;
+  width: 390px;
+  height: auto;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.myntra-auth-page-content img {
+  width: 100%;
+  height: auto!important;
+}
+
+.login-data-container {}
+
+/* .login {
+  width: 450px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+} */
+
 .login {
-    width: 450px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-  }
-  
-  .login > form {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .login > form > input {
-    line-height: 30px;
-    margin-bottom: 10px;
-    padding: 10px;
-    font-size: 18px;
-    border-radius: 5px;
-    border-color: teal;
-  }
-  
-  .login > form > button {
-    line-height: 30px;
-    padding: 10px;
-    font-size: 18px;
-    background-color: teal;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
-  }
-  
-  .login > form > button:hover {
-    opacity: 88%;
-  }
-  
-  .login__register {
-    color: teal;
-    cursor: pointer;
-  }
+  padding: 36px 36px 0;
+}
+
+.login>h2 {
+  /* font-family: Assistant; */
+  font-size: 20px;
+  font-weight: 700;
+  margin-bottom: 24px;
+}
+
+.login > h2 > span {
+  font-size: 16px;
+  font-weight: 400;
+  color: #535766;
+}
+
+.login>form {
+  display: flex;
+  flex-direction: column;
+}
+
+.login>form>input {
+  line-height: 16px;
+  margin-bottom: 10px;
+  padding: 11px 12px;
+  font-size: 14px;
+  border: 1px solid #d4d5d9;
+  color: #282c3f;
+}
+
+.login>form>input:focus {
+  border: 1px rgb(20, 19, 19);
+  border-radius: 0;
+}
+
+.login>form>button {
+  line-height: 30px;
+  padding: 6px;
+  font-size: 18px;
+  background-color: #ff3f6c;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.login>form>button:hover {
+  opacity: 88%;
+}
+
+.login__register {
+  color: #ff3f6c;
+  cursor: pointer;
+  margin-top: 0.6rem;
+  margin-left: 0.4rem;
+}
