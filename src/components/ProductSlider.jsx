@@ -10,14 +10,18 @@ import { useNavigate } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { toast } from 'react-hot-toast';
 import { addToWishlist } from '../redux/Slices/WishlistSlice';
+import { selectUser } from '../redux/Slices/AuthSlice';
 
 
-const ProductSlider = ({ mainImage, otherImages, rating, knumbering, title, para, RealPrice, DiscountPrice, size, Id, handleChange, selectedCategory }) => {
+const ProductSlider = ({ mainImage, otherImages, rating, knumbering, title, para, RealPrice, DiscountPrice, size, Id, handleViewChange, selectedViewProduct }) => {
+
+    const user = useSelector(selectUser)
+
     const navigate = useNavigate()
 
     const [hovering, setHovering] = useState(false);
     const [viewHover, setViewHover] = useState(false);
-    
+
     const dispatch = useDispatch()
 
     const data =
@@ -38,14 +42,19 @@ const ProductSlider = ({ mainImage, otherImages, rating, knumbering, title, para
 
     const handleWishlistClick = (e) => {
         e.stopPropagation()
-        dispatch(addToWishlist(data))
-        toast.success("Hurrah!! Product Added To Wishlist")
+        if (user === null) {
+            navigate("/login")
+        }
+        else {
+            dispatch(addToWishlist(data))
+            toast.success("Hurrah!! Product Added To Wishlist")
+        }
     }
 
     return (
         <div className='product'
             onMouseEnter={() => setHovering(true)}
-            onMouseLeave={() => setHovering(true)}//false
+            onMouseLeave={() => setHovering(false)}
             onClick={() => RedirectProductdetail()}
         >
             {
@@ -60,7 +69,7 @@ const ProductSlider = ({ mainImage, otherImages, rating, knumbering, title, para
 
                         </OwlCarousel>
                     </div>
-                    <MdOutlineViewCarousel fontSize={18} className="view-icon" onClick={handleChange} selectedCategory={selectedCategory} />
+                    <MdOutlineViewCarousel fontSize={18} className="view-icon" onClick={handleViewChange} selectedViewProduct={selectedViewProduct} />
                     {/* onClick={handleChange} selectedCategory={selectedCategory}  */}
                     {/* this is for view icon */}
                     <div className='wishlist-parent'>

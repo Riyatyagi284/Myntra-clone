@@ -2,6 +2,12 @@
     display: flex;
     height: 80px;
     width: 100%;
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    box-shadow: 2px 2px 8px #a19797;
+    backdrop-filter: blur(70px);
     /* font-family: "Assistant Bold"; */
 }
 

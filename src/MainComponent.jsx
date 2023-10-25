@@ -26,7 +26,7 @@ function MainComponent() {
       <Routes>
         <Route exact="/" index element={<Home handleSearchInputChange={handleSearchInputChange} searchQuery={searchQuery}/>} />
         <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/cart/cart-to-wishlist" element={<CartToWishlist />} />
+        {/* <Route path="/cart/cart-to-wishlist" element={<CartToWishlist />} /> */}
         <Route path="/cart" element={<Cart />} />
         <Route path="/login" element={<Login />} />
         <Route path="/product-detail-page" element={<ProductDetailPage />} />

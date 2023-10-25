@@ -39,12 +39,7 @@ const Cart = () => {
 
     const handleCartToWishlist = () => {
         console.log("clicked")
-      
-        if (!user) {
-          navigate("/cart/cart-to-wishlist");
-        } else {
-          navigate("/wishlist");
-        }
+        navigate("/wishlist")
       };
 
     useEffect(() => {

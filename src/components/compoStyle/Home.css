@@ -32,7 +32,7 @@
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     display: block;
     height: auto;
-    z-index: 9999;
+    z-index: 9;
 }
 
 ul li {
@@ -108,7 +108,7 @@ ul li {
 
 .filter1 {
     border-top: 1px solid #E9E9ED;
-    height: 5.4rem;
+    height: 7.4rem;
     padding-top: 2.4rem;
 }
 
@@ -201,6 +201,7 @@ ul li {
     width: 100%;
     grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
     gap: 1.9rem;
+    position: relative;
 }
 
 .sidebar-label-container {
@@ -208,4 +209,36 @@ ul li {
 }
 .radio-input {
     margin-right: 0.8rem;
+}
+
+/* ################view Page################ */
+
+.view-Container-wrapper {
+    width: 100%;
+    height: auto;
+    background-color: rgb(99 94 94 / 60%);
+    z-index: 99;
+}
+
+.view-container {
+    width: 35%;
+    height: scroll;
+    float: right;
+    background: aliceblue;
+    position: relative;
+    margin-right: -1rem;
+    margin-top: -5rem;
+    z-index: 99;
+
+    position: absolute;
+    top: -5rem;
+    right: 0;
+    padding-bottom: 6rem;
+}
+
+.view-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem;
 }

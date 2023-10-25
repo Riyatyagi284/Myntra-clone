@@ -4,13 +4,20 @@ import { productImages } from '../constants';
 import ProductSlider from './ProductSlider.jsx';
 import Sidebar from './sidebar/Sidebar';
 import { RxCross2 } from "react-icons/rx"
+import RightSidebar from './RightSidebar';
+import { Navigate } from 'react-router-dom';
 
 function Home({ searchQuery }) {
     const [selectedCategory, setSelectedCategory] = useState("");
+    const [selectedViewProduct,setSelectedViewProduct] = useState("")
     const [minPrice, setMinPrice] = useState("");
     const [maxPrice, setMaxPrice] = useState("");
     const [selectedLi, setSelectedLi] = useState("")
     const [dropDownfilterActive, setDropDownFilterActive] = useState("")
+    const [showViewPage, setShowViewPage] = useState(false)
+
+    console.log("selectedCategory",selectedCategory);
+
     // for dropdown lists
     const handleSelectedLi = (event) => {
         setSelectedLi(event)
@@ -23,10 +30,36 @@ function Home({ searchQuery }) {
         }
     }
 
-    // for input radio btns 
     const handleChange = (event) => {
         setSelectedCategory(event.target.value)
     }
+
+    // for input radio btns 
+    const handleViewChange = (e, title) => {
+        e.stopPropagation()
+        setShowViewPage(true)
+        setSelectedViewProduct(title)
+    }
+
+    const handleRemoveViewPage = () => {
+        setShowViewPage(false)
+        Navigate("/")
+    }
+
+    const handleViewFilter = (productImages, selectedViewProduct) => {
+        let filteredViewProducts = [...productImages];
+
+        if (selectedViewProduct) {
+            filteredViewProducts = filteredViewProducts.filter((product) => {
+                return (product.title === selectedViewProduct)
+            })
+        }
+        return filteredViewProducts;
+
+    }
+
+    const data = handleViewFilter(productImages, selectedViewProduct)
+
 
     const handlePriceChange = (event) => {
         const value = event.target.value;
@@ -82,8 +115,8 @@ function Home({ searchQuery }) {
                     para={para}
                     RealPrice={RealPrice}
                     DiscountPrice={DiscountPrice}
-                    handleChange={handleChange}
-                    selectedCategory={selectedCategory} />
+                    handleViewChange={(e) => handleViewChange(e, title)}
+                    selectedViewProduct={selectedViewProduct} />
             )
         )
     }
@@ -123,6 +156,24 @@ function Home({ searchQuery }) {
                     <div className="product-grid">
                         {result}
                     </div>
+
+
+                    {
+                        showViewPage && (<div className="view-Container-wrapper">
+                            <div className="view-container">
+                                <div className="view-header">
+                                    <h2>Similar Products</h2>
+                                    <RxCross2 onClick={handleRemoveViewPage} />
+                                </div>
+                                {
+                                    data.map((specificProduct) => (
+                                        <RightSidebar specificProduct={specificProduct} />
+                                    ))
+                                }
+                            </div>
+                        </div>)
+                    }
+
 
                 </div>
             </div>

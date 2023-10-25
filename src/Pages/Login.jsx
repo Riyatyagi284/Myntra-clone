@@ -4,6 +4,7 @@ import { auth, createUserWithEmailAndPassword, updateProfile, signInWithEmailAnd
 import { login } from "../redux/Slices/AuthSlice"
 import "./PageStyleCompo/Login.css"
 import MyntraLoginImage from "../Images/Myntra-Login-Image.avif"
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
     const [email, setEmail] = useState('');
@@ -11,6 +12,8 @@ const Login = () => {
     const [name, setName] = useState('');
     const [profilePic, setProfilePic] = useState('');
     const dispatch = useDispatch();
+
+    const navigate = useNavigate()
 
     const loginToApp = (e) => {
         e.preventDefault();
@@ -24,6 +27,12 @@ const Login = () => {
                     photoUrl: userAuth.user.photoURL,
                 })
             );
+            if (location.state?.from) {
+                navigate(location.state.from)
+            }
+            // else {
+            //     navigate("/")
+            // }
         }).catch((err) => {
             alert(err);
         });

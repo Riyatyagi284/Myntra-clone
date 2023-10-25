@@ -2,7 +2,6 @@
     display: flex;
     justify-content: space-between;
     align-items: start;
-    width: 100vw;
     height:auto;
     background: #3626262b;
 }
@@ -20,8 +19,8 @@
 .product-detail-img{
     width: 47%;
     height: 27.6rem;
+    object-fit: cover;
     margin-bottom: 2%;
-    /* margin-right: -; */
     margin-left: 1.2%;
 }
 .product-detail-right{
@@ -100,8 +99,8 @@
 .product-anchor {
     color: rgb(228, 84, 108);
     position: absolute;
-    bottom: 183px;
-    right: 296px;
+    bottom: 197px;
+    right: 340px;
     margin-bottom: 0px;
     text-decoration: none;
     font-size: 1.3rem;

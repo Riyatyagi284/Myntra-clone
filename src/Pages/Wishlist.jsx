@@ -9,7 +9,7 @@ import { AiOutlineShoppingCart } from "react-icons/ai";
 import "./PageStyleCompo/Wishlist.css"
 import { NavLink } from 'react-router-dom';
 import { selectUser } from '../redux/Slices/AuthSlice';
-import Login from "../Pages/Login"
+import CartToWishlist from "../Pages/CartToWishlist"
 
 const Wishlist = () => {
     const user = useSelector(selectUser)
@@ -22,15 +22,23 @@ const Wishlist = () => {
         toast.error("Item Removed from wishlist")
     };
 
+    // {
+    //     !user ? (<Login /> ) : (const addToCart = (product) => {
+    //         dispatch(add(product))
+    //         toast.success("Hurrah!! Product Added To Cart");
+    //     };)
+    // }
+
     const addToCart = (product) => {
         dispatch(add(product))
         toast.success("Hurrah!! Product Added To Cart");
     };
 
+
     return (
         <>
             {
-                !user ? (<Login />) : (
+                !user ? (<CartToWishlist />) : (
 
                     <div className='wish-parent'>
                         <div className='wishlist-title'>
@@ -58,7 +66,7 @@ const Wishlist = () => {
                                                 <th className='wish-row-header' s>Add To Cart</th>
                                             </tr>
                                         </thead>
-                                
+
                                         <tbody>
                                             {
                                                 wishlist.map((product) => (
@@ -81,7 +89,9 @@ const Wishlist = () => {
                                                         </td>
 
                                                         <td>
-                                                            <AiOutlineShoppingCart className="wish-addtocart-btn" onClick={() => addToCart(product)} />
+                                                            <AiOutlineShoppingCart className="wish-addtocart-btn"
+                                                                onClick={() => addToCart(product)} 
+                                                            />
                                                         </td>
                                                     </tr>
                                                 ))
