@@ -132,7 +132,7 @@ function Home({ searchQuery }) {
                         FILTERS
                     </div>
 
-                    <div>
+                    <div className='sidebar-wrapper'>
                         <Sidebar handleChange={handleChange} handlePriceChange={handlePriceChange} selectedCategory={selectedCategory} />
                     </div>
                 </div>

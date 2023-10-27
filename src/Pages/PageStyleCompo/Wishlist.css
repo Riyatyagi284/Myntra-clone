@@ -19,7 +19,7 @@
 }
 
 .wishlist-title h2 {
-    font-size: 3rem;
+    font-size: 2rem;
     color: rgb(22, 20, 20);
     font-weight: 500;
 }
@@ -40,11 +40,12 @@
     overflow-x: hidden;
     padding: 7rem 0;
     margin: 0 auto;
-    width: 1200px;
+    width: 100%;
 }
 
 .wish-table {
-    width: 100%;
+    width: 80%;
+    margin: auto;
 }
 
 .wish-thead {
@@ -54,8 +55,9 @@
 }
 
 .wish-row-header {
-    font-size: 1rem;
-    padding: 0 2rem;
+    font-size: 70%;
+    padding: 1rem 0;
+    /* padding: 1rem 2rem; */
 }
 
 .wish-tbody-row {
@@ -71,13 +73,16 @@
 }
 
 .wish-image {
-    width: 80px;
+    width: auto;
     margin: 0;
+    object-fit: cover;
 }
 
 .wish-prouct-title {
     display: block;
-    margin: auto 0;
+    font-size: 75%;
+    text-align: center;
+    margin-top: 10%;
 }
 
 .wish-btn {
@@ -88,4 +93,24 @@
     cursor: pointer;
     border: 1px solid #ff3f6c;
     display: inline-block;
+}
+
+/* ############## Wishlist Reponsive Styling #################   */
+
+@media screen and (min-width:490px) and (max-width:524px) {
+    td {
+        font-size: 80%;
+    }
+    .wish-prouct-title {
+        text-align: start;
+        margin-top: 14%;
+    }
+    element.style {
+        width: fit-content;
+        padding: 0;
+        border-right: 1px solid;
+    }
+    .wish-delete-btn {
+        margin: 0 ;
+    }
 }

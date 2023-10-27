@@ -1,5 +1,6 @@
 .Navbar {
     display: flex;
+    align-items: center;
     height: 80px;
     width: 100%;
     position: sticky;
@@ -8,12 +9,16 @@
     z-index: 99;
     box-shadow: 2px 2px 8px #a19797;
     backdrop-filter: blur(70px);
+    position: relative;
     /* font-family: "Assistant Bold"; */
 }
 
+.NavToggler {
+    display: none;
+}
 
 .NavLogo {
-    width: 10%;
+    width: auto;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -101,5 +106,200 @@ img {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
+
+}
+
+/* #################### Toggle Navbar Stying ################## */
+.toggleNavbar {
+    width: 50%;
+    height: 100vh;
+    position: absolute;
+    top: -5px;
+    left: 0;
+}
+
+.toggleNavbar>img {
+    width: 100%;
+    height: auto;
+    margin-bottom: -1rem;
+}
+
+.toggle-Nav-lists {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+    padding-top: 4rem;
+    gap: 4rem;
+    cursor: pointer;
+    text-decoration: none;
+    height: 100%;
+    background: aliceblue;
+    color: #000;
+}
+
+.toggle-Nav-lists li {
+    list-style: none;
+}
+
+.toggle-Nav-lists li>.navlink {
+    text-decoration: none;
+    Color: #282c3f;
+    font-size: 1.4rem;
+    font-weight: 900 !important;
+    padding: 0 20px;
+}
+
+.ham-absolute {
+    position: absolute;
+    top: 185%;
+    right: 52%;
+    z-index: 9;
+}
+
+/* #################### Responsive Navbar Stying ##################  */
+
+@media screen and (min-width:1000px) and (max-width:1200px) {
+
+    .NavLogo,
+    .Nav-lists,
+    .NavSearch,
+    .NavCategory {
+        width: fit-content;
+    }
+}
+
+/* @media screen and (min-width:769px) and (max-width:1000px) { */
+@media screen and (max-width:1000px) {
+    .menu-logo-wrapper {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .NavToggler {
+        display: block;
+    }
+
+    .NavToggler>.ham-icon {
+        font-size: 2rem;
+    }
+
+    .NavLogo {
+        width: auto;
+    }
+
+    .NavCategory {
+        display: none;
+    }
+
+    .Navbar {
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 2rem;
+        padding-right: 3rem;
+    }
+
+    .NavSearch {
+        display: none;
+    }
+
+    .NavRight {
+        float: right;
+        width: fit-content;
+    }
+
+    .searchbar-icon {
+        left: 136%;
+        width: 1.5rem;
+        height: 1.8rem;
+    }
+
+    .ham-absolute {
+        top: 250%;
+    }
+}
+
+/* @media screen and (min-width:788px) {
+    .toggleNavbar {
+        top: -4px;
+    }
+}
+
+@media screen and (min-width:724px) and (max-width:806px) {
+    .toggleNavbar {
+        top: -8px;
+    }
+}
+ */
+
+@media screen and (min-width:670px) and (max-width:800px) {
+    .ham-absolute {
+        top: 190%;
+    }
+}
+
+@media screen and (min-width:525px) and (max-width:670px) {
+    .ham-absolute {
+        top: 157%;
+    }
+}
+
+@media screen and (max-width:524px) {
+    .ham-absolute {
+        top: 137%;
+        right: 18rem;
+    }
+
+    .toggle-Nav-lists li>.navlink {
+        font-size: 1rem;
+    }
+    .toggle-Nav-lists {
+        gap: 2.4rem;
+    }
+}
+
+@media screen and (min-width:460px) and (max-width:510px) {
+    .ham-absolute {
+        top: 140%;
+        right: 16.6rem;
+    }
+}
+
+@media screen and (min-width:400px) and (max-width:460px) {
+    .ham-absolute {
+        top: 112%;
+        right: 15rem;
+    }
+}
+
+@media screen and (max-width:400px) {
+    .Navbar {
+        align-items: center;
+        justify-content: space-between;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        gap: 1rem;
+    }
+    .ham-absolute {
+        top: 98%;
+        right: 14rem;
+    }
+    .toggle-Nav-lists li>.navlink {
+        font-size: 0.6rem;
+    }
+}
+
+@media screen and (max-width:310px) {
+    #nav-right-list {
+        padding: 5px;
+    }
+    .ham-absolute {
+        top: 84%;
+        right: 10rem;
+    }
+    .toggle-Nav-lists li>.navlink {
+        font-size: 0.5rem;
+    }
 }

@@ -56,6 +56,7 @@
 .p-price .real-p {
     color: #665f57;
     font-weight: 700;
+    /* font-size: 1.5rem; */
     margin-left: 14px;
     margin-right: 14px;
     text-decoration: line-through;

@@ -19,7 +19,7 @@
     color: #000000;
     font-weight: 700;
     font-size: 16px;
-    margin:0 10px;
+    margin: 0 10px;
 }
 
 .parent-dropdown {
@@ -207,6 +207,7 @@ ul li {
 .sidebar-label-container {
     margin-bottom: 1rem;
 }
+
 .radio-input {
     margin-right: 0.8rem;
 }
@@ -241,4 +242,73 @@ ul li {
     justify-content: space-between;
     align-items: center;
     padding: 4rem;
+}
+
+/* ################### Responive Home ################## */
+
+@media screen and (max-width:1200px) {
+    .sidebar-wrapper {
+        width: 8rem;
+    }
+    .Rating-btn {
+        bottom: 5.7rem;
+    }
+}
+@media screen and (min-width:525px) and (max-width:600px) {
+    .product {
+        margin-left: 1rem;
+    }
+    .Rating-btn {
+        bottom: 7.7rem;
+    }
+}
+
+@media screen and (max-width:524px) {
+    .product {
+        margin: 0 auto;
+    }
+    .sidebar-label-container {
+        margin-bottom: 2rem;
+    }
+    .Rating-btn {
+        bottom: 5.7rem;
+    }
+    .parent-dropdown {
+        width: auto;
+    }
+}
+
+@media screen and (min-width:400px) and (max-width:424px) {
+    .product-grid {
+        margin-left: 10%;
+    }
+    .Rating-btn {
+        bottom: 7.7rem;
+    }
+}
+
+@media screen and (min-width:330px) and (max-width:423px) {
+    .card {
+        width: 80%;
+        margin: auto;
+    }
+    .Rating-btn {
+        bottom: 7.7rem;
+    }
+    .parent-dropdown {
+        width: auto;
+    }
+}
+
+@media screen and (min-width:280px) and (max-width:330px) {
+    .card {
+        width: 55%;
+        margin-left: 5rem;
+    }
+    .Rating-btn {
+        bottom: 9.7rem;
+    }
+    .parent-dropdown {
+        width: auto;
+    }
 }
